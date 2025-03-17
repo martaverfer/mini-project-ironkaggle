@@ -1,0 +1,8 @@
+jupyterlab>=4.3.5
+ipykernel>=6.29.5
+pandas>=2.2.2
+scikit-learn>=1.6.1
+numpy>=1.26.4
+matplotlib>=3.9.2
+seaborn>=0.13.2
+plotly>=6.0.0
