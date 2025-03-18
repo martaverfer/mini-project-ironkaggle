@@ -35,18 +35,12 @@ Dataset has numerical data in columns:
   - Unique values are:
  `[1.  2.  1.5 3.  2.5 3.5]`
 
-<<<<<<< HEAD
 ### Continuous values
 - Column "price" has 4028 unique values.
-=======
-### Contiuous values
-- Column `"price"` has 4028 unique values.
->>>>>>> main
   - Dependent variable, the target.
   - Our primary focus is to understand which features most significantly impact the house price. Additionally, we aim to explore properties valued at $650K and above for more detailed insights.
 
 
-<<<<<<< HEAD
 #### Size related
 - Column "sqft_lot" has 9782 unique values.
   - sqft_lot: Square footage of the land space.
@@ -54,21 +48,9 @@ Dataset has numerical data in columns:
   - sqft_lot15: The land spaces for the nearest 15 neighbors in 2015.
 - Column "sqft_living" has 1038 unique values.
   - sqft_living: Square footage of the interior living space.
-  - TODO: copy from dataset desceription https://my.ironhack.com/cohorts/66f469cb0c31b7002bd4e62b/lms/courses/course-v1:IRONHACK+DSMLFT+202502_RMT/modules/ironhack-course-chapter_6/units/ironhack-course-chapter_6-sequential_4-vertical
 - Column "sqft_above" has 946 unique values.
 - Column "sqft_living15" has 777 unique values.
 - Column "sqft_basement" has 306 unique values.
-=======
-#### Size related features of the houses
-- Column `"sqft_lot"` has 9782 unique values.
-  - Square footage of the land space.
-- Column `"sqft_lot15"` has 8689 unique values.
-  - The land spaces for the nearest 15 neighbors in 2015.
-- Column `"sqft_living"` has 1038 unique values.
-- Column `"sqft_above"` has 946 unique values.
-- Column `"sqft_living15"` has 777 unique values.
-- Column `"sqft_basement"` has 306 unique values.
->>>>>>> main
   
 For all columns starting with prefix `"sqft_"`:
   - All values are integers, but from scatter plot distribution looks like the values can be treated as continuous.
