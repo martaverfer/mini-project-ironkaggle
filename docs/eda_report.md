@@ -1,9 +1,3 @@
-# TODO:
-
-- `[TODO]`: copy from dataset desceription for remaining columns https://my.ironhack.com/cohorts/66f469cb0c31b7002bd4e62b/lms/courses/course-v1:IRONHACK+DSMLFT+202502_RMT/modules/ironhack-course-chapter_6/units/ironhack-course-chapter_6-sequential_4-vertical
-
-
----
 # EDA
 
 Dataset has shape (21613, 21)
