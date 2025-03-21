@@ -70,7 +70,7 @@ plt.savefig("your_name.png", dpi=300, transparent=True)
 
 module | method | notebook | remarks
 --- | --- | --- | ---
-decision_tree.py | corr_heatmap | decision_tree.ipynb | TBD
+decision_tree.py | corr_heatmap | decision_tree.ipynb | moved to common_viz
 decision_tree.py | create_train_test_splits_and_evaluate | decision_tree.ipynb | TBD
 decision_tree.py | cross_validate_model | random_forest_reg.ipynb | TBD
 decision_tree.py | cross_validate_model | decision_tree.ipynb | TBD

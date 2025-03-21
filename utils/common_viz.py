@@ -127,3 +127,43 @@ def model_validation(results_df, final_model, X_train, X_test, y_train, y_test):
     plt.legend()
     plt.show()
 
+def corr_heatmap(dataframe):
+
+    df = dataframe.copy()
+
+    # Remove date column for the correlation matrix
+    if "date" in dataframe.columns:
+        df = df.drop(columns=["date"])
+
+    # Moving price columns as last
+    df = df[[col for col in df.columns if col != 'price'] + ['price']]
+
+    # Correlation matrix calculation and heatmap
+    correlation_matrix = df.corr()
+
+    mask = np.triu(np.ones_like(correlation_matrix, dtype=bool))
+
+    plt.figure(figsize=(13, 10))
+    sns.heatmap(correlation_matrix, 
+                    cmap="magma_r", 
+                    linewidths=0.5, 
+                    annot=True, 
+                    fmt=".2f",
+                    xticklabels=[col.replace('_', ' ').title() for col in df.columns],
+                    yticklabels=[col.replace('_', ' ').title() for col in df.columns], 
+                    mask=mask
+                    )
+    plt.title("Correlation Heatmap", fontsize=14)
+    plt.xticks(rotation=90)
+    plt.gca().tick_params(colors='black', labelsize=10, labelcolor='black', which='both', width=2)
+   # plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='white', labelrotation=0, length=6, width=2)
+
+    plt.savefig("../images/correlation_heatmap.png", 
+                bbox_inches='tight', 
+                facecolor='none', 
+                transparent=True) 
+
+    # Looking for correlations with the target for printing
+    correlation_with_price = df.corrwith(df["price"]).sort_values(ascending=False)
+    
+    return correlation_with_price
