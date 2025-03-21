@@ -41,7 +41,7 @@ mpl.rcParams.update({
 # ==============================
 
 # Path to the custom font file
-FONT_PATH = './scp/fonts/Montserrat-Regular.ttf'
+FONT_PATH = '../utils/fonts/Montserrat-Regular.ttf'
 
 # Add the font to matplotlib's font manager
 font_manager.fontManager.addfont(FONT_PATH)
