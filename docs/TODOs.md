@@ -62,7 +62,8 @@ These tasks have the scope of the entire project.
 plt.savefig("your_name.png", dpi=300, transparent=True)
 ```
 - [ ] Add Gryffindor color scale, use approach from `ridge_reg.ipynb`.
-
+- [ ] Combine with `common_viz.py`
+- [ ] Tune corr_heatmap for better readability of labels (smaller font)
 
 # Refactoring notes
 
