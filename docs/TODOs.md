@@ -15,8 +15,12 @@ These tasks have the scope of the entire project.
 - [ ] Reduse excessive library imports.
 - [ ] Fix overwritting exiting files.
 
+## Feature engineering
+- [ ] See the shap feature importance in `feature_engineering.ipynb` to compare with `random_forest_reg.ipynb`
+- [ ] Remove feature importance from this notebook, maybe?
+- [ ] Unify features for all models to get more precise comparison of the models.
+
 ## Random forest regressor
-- [ ] See the shap feature importance in `feature_engineering.ipynb` to compare for RFR
 - [ ] Optimize performance.
 
 ## Ridge regression
