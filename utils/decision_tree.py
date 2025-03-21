@@ -41,7 +41,7 @@ mpl.rcParams.update({
 # ==============================
 
 # Path to the custom font file
-FONT_PATH = './scp/fonts/Montserrat-Regular.ttf'
+FONT_PATH = '../utils/fonts/Montserrat-Regular.ttf'
 
 # Add the font to matplotlib's font manager
 font_manager.fontManager.addfont(FONT_PATH)
@@ -102,7 +102,7 @@ def corr_heatmap(dataframe):
     plt.gca().tick_params(colors='black', labelsize=10, labelcolor='black', which='both', width=2)
    # plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='white', labelrotation=0, length=6, width=2)
 
-    plt.savefig("./images/correlation_heatmap.png", 
+    plt.savefig("../images/correlation_heatmap.png", 
                 bbox_inches='tight', 
                 facecolor='none', 
                 transparent=True) 
@@ -422,7 +422,7 @@ def feature_score(final_model, X_train):
     plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='black', labelrotation=0, length=6, width=2)
     plt.grid(color='black', linestyle='--', linewidth=0.5)
 
-    plt.savefig("./images/feature_importance.png", 
+    plt.savefig("../images/feature_importance.png", 
                 bbox_inches='tight', 
                 facecolor='none', 
                 transparent=True)
@@ -669,7 +669,7 @@ def model_validation(results_df, final_model, X_train, X_test, y_train, y_test):
     plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='black', labelrotation=0, length=6, width=2)
     plt.grid(color='black', linestyle='--', linewidth=0.5)
 
-    plt.savefig("./images/actualvspredicted.png", 
+    plt.savefig("../images/actualvspredicted.png", 
                 bbox_inches='tight', 
                 facecolor='none', 
                 transparent=True)

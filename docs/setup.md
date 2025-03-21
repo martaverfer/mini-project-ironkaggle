@@ -1,30 +1,61 @@
 # Setup venv
 
-### Mac/Win
+WARNING:
+XGBoost library requires 64-bit version of Python for 64-bit OS.
 
-Create the virtual environment:
+### MAC
 
-(Win) Open the integrated terminal (press `Ctrl + `` or go to View > Terminal).
+xgboost relies on OpenMP for parallel computation. On macOS, it needs libomp.dylib, but this library is not included by default on macOS.
 
+On the system level (not in virtual environment) install `libomp` library. 
+
+Code for homebrew:
 ```bash
-python3 -m venv venv
+brew install libomp
 ```
 
-Activate the virtual environment:
-<<<<<<< HEAD
+For more information:
+- https://openmp.llvm.org/design/Runtimes.html
 
-(Mac)
+### Mac/Win
 
-=======
+0. Open terminal to run the comands given below.
+
+(Win) Open the integrated terminal (press `Ctrl + `` or go to View > Terminal).
+(Mac) Open terminal directly, or from Finder, or in VS Code for the current project folder.
+
+1. Create the virtual environment.
+
+MAC:
+```bash
+python3 -m venv myenv64; \
+source myenv64/bin/activate
+```
+
+WIN:
+```powershell
+$pythonPath = "C:\Users\YourUsername\AppData\Local\Programs\Python\Python310\python.exe"
+```
+- adjust the path to your 64-bit Python executable.
+
+```
+& $pythonPath -m venv C:\path\to\your\env64
+# Example:
+# & "C:\Users\Alice\AppData\Local\Programs\Python\Python310\python.exe" -m venv "D:\Projects\myenv64"
+```
+- this creates the venv
+
+
+2. Activate the virtual environment:
+
 - For Windows: 
 ```bash
-venv\Scripts\activate
+myenv64\Scripts\activate
 ```
 
 - For Linux/Mac: 
->>>>>>> main
 ```bash
-source venv/bin/activate
+source myenv64/bin/activate
 ```
 
 (Win)
@@ -61,7 +92,7 @@ Preconditions: install dependencies first (see package management), including `i
 After running this comand in terminal:
 
 ```bash
-python -m ipykernel install --user --name=venv --display-name "Python (venv)"
+python -m ipykernel install --user --name=venv --display-name "Python 64 (venv)"
 ```
 
 restart VS code.
