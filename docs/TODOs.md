@@ -12,10 +12,15 @@
 These tasks have the scope of the entire project.
 
 - [ ] Make filepaths adjustable for Win and Mac users.
-- [ ] Reduse excessive library imports
+- [ ] Reduse excessive library imports.
+- [ ] Fix overwritting exiting files.
 
 ## Random forest regressor
 - [ ] See the shap feature importance in `feature_engineering.ipynb` to compare for RFR
+- [ ] Optimize performance.
+
+## Ridge regression
+- [ ] Optimize performance.
 
 ## For linear regression
 
