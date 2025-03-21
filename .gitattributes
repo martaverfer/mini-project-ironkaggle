@@ -1,0 +1,6 @@
+*.pkl filter=lfs diff=lfs merge=lfs -text
+.pkl filter=lfs diff=lfs merge=lfs -text
+notebooks/lasso_model.pkl filter=lfs diff=lfs merge=lfs -text
+notebooks/xgboost_model.pkl filter=lfs diff=lfs merge=lfs -text
+random_forest_model.pkl filter=lfs diff=lfs merge=lfs -text
+decision_tree_model.pkl filter=lfs diff=lfs merge=lfs -text

@@ -7,7 +7,7 @@ Dataset has numerical data in columns:
 - Descrete: `['price', 'view', 'bedrooms', 'bathrooms', 'floors', 'zipcode', 'yr_built', 'yr_renovated']`
 - Continuous: `['price', 'sqft_lot', 'sqft_lot15', 'sqft_above', 'sqft_basement', 'sqft_living', 'lat', 'long']`
 
-### Descrete values
+### Discrete values
 
 - Column `"view"` has 5 unique values.
   - Unique values are: `[0 3 4 2 1]`
@@ -36,9 +36,9 @@ Dataset has numerical data in columns:
 ### Contiuous values
 - Column `"price"` has 4028 unique values.
   - The sale price of the house (prediction target).
+
   - Dependent variable, the target.
   - Our primary focus is to understand which features most significantly impact the house price. Additionally, we aim to explore properties valued at $650K and above for more detailed insights.
-
 
 #### Size related features of the houses
 - Column `"sqft_lot"` has 9782 unique values.
