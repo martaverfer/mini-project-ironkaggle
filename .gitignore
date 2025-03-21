@@ -1,3 +1,6 @@
+# excluding one model from sync with repo - size is 186,7 MB
+random_forest_model.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
