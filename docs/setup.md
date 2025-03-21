@@ -3,6 +3,20 @@
 WARNING:
 XGBoost library requires 64-bit version of Python for 64-bit OS.
 
+### MAC
+
+xgboost relies on OpenMP for parallel computation. On macOS, it needs libomp.dylib, but this library is not included by default on macOS.
+
+On the system level (not in virtual environment) install `libomp` library. 
+
+Code for homebrew:
+```bash
+brew install libomp
+```
+
+For more information:
+- https://openmp.llvm.org/design/Runtimes.html
+
 ### Mac/Win
 
 0. Open terminal to run the comands given below.
