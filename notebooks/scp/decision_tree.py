@@ -98,6 +98,14 @@ def corr_heatmap(dataframe):
                     mask=mask
                     )
     plt.title("Correlation Heatmap", fontsize=14)
+    plt.xticks(rotation=90)
+    plt.gca().tick_params(colors='black', labelsize=10, labelcolor='black', which='both', width=2)
+   # plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='white', labelrotation=0, length=6, width=2)
+
+    plt.savefig("./images/correlation_heatmap.png", 
+                bbox_inches='tight', 
+                facecolor='none', 
+                transparent=True) 
 
     # Looking for correlations with the target for printing
     correlation_with_price = df.corrwith(df["price"]).sort_values(ascending=False)
@@ -402,13 +410,22 @@ def feature_score(final_model, X_train):
     importance_df = importance_df.sort_values(by='Importance', ascending=False)
 
     # Plot feature importance
-    plt.figure(figsize=(10,5))
-    plt.barh(importance_df['Feature'], importance_df['Importance'], color='skyblue')
-    plt.xlabel('Feature Importance')
-    plt.ylabel('Feature Name')
-    plt.title('Feature Importance')
-    plt.gca().invert_yaxis() 
-    plt.show()
+    plt.figure(figsize=(10, 5))
+    plt.barh(importance_df['Feature'], importance_df['Importance'], color='#eeba30')
+    plt.xlabel('Feature Importance', fontweight='bold', fontsize=12, color='black')
+    plt.ylabel('Feature Name', fontweight='bold', fontsize=12, color='black')
+    plt.title('Feature Importance', fontweight='bold', fontsize=14, color='black')
+
+    plt.gca().invert_yaxis()
+    plt.gca().set_yticklabels([label.replace('_', ' ').title() for label in importance_df['Feature']], color='black')
+    plt.gca().tick_params(colors='black', labelsize=10, labelcolor='black', which='both', width=2)
+    plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='black', labelrotation=0, length=6, width=2)
+    plt.grid(color='black', linestyle='--', linewidth=0.5)
+
+    plt.savefig("./images/feature_importance.png", 
+                bbox_inches='tight', 
+                facecolor='none', 
+                transparent=True)
 
     return importance_df
 
@@ -640,13 +657,22 @@ def model_validation(results_df, final_model, X_train, X_test, y_train, y_test):
     # 1. Actual vs. Predicted Values
     plt.figure(figsize=(8, 6))
     sns.regplot(x='Actual Price', y='Predicted Price', data=results_df,
-                scatter_kws={"color": "blue", "alpha": 0.5},
-                line_kws={"color": "red", "linewidth": 3},
+                scatter_kws={"color": "#eeba30", "alpha": 0.5},
+                line_kws={"color": "#000000", "linewidth": 3},
                 ci=100)
     plt.ylim(bottom=0)
-    plt.title('Actual vs. Predicted Values')
-    plt.xlabel('Actual')
-    plt.ylabel('Predictions')
+    plt.title('Actual vs. Predicted Values', color='black', fontsize=14, fontweight='bold')
+    plt.xlabel('Actual', fontweight='bold', fontsize=12, color='black')
+    plt.ylabel('Predictions', fontweight='bold', fontsize=12, color='black')
+
+    plt.gca().tick_params(colors='black', labelsize=10, labelcolor='black', which='both', width=2)
+    plt.gca().tick_params(axis='both', which='major', labelsize=10, labelcolor='black', labelrotation=0, length=6, width=2)
+    plt.grid(color='black', linestyle='--', linewidth=0.5)
+
+    plt.savefig("./images/actualvspredicted.png", 
+                bbox_inches='tight', 
+                facecolor='none', 
+                transparent=True)
     plt.show()
 
     # 2. Residuals vs. Predicted Values
