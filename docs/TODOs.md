@@ -12,6 +12,7 @@
 These tasks have the scope of the entire project.
 
 - [ ] Make filepaths adjustable for Win and Mac users.
+- [ ] test file handler functions on Win.
 - [ ] Reduse excessive library imports.
 - [ ] Fix overwritting exiting files.
 - [ ] Logger: either use it everywhere or not use it at all.
@@ -49,12 +50,13 @@ These tasks have the scope of the entire project.
 
 # For python modules
 
-## Common functions
-- [ ] Save models to pickles
-
 ## generic for libs
 - [ ] All methids in a long module should be placed alphabetically to find them quickly
 - [ ] All functions and clas methods should have doc strings describing parameters and output
+
+## file_handler
+- [ ] Save models to pickles
+- [ ] Check size and gitignore if exceeding limit for GitHub repo
 
 ## plots
 - [ ] Add code to plot class to automatically save all plots as image files:
