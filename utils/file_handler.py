@@ -16,8 +16,15 @@ def hash_object(obj):
     """Generate hash of a pickled object in memory."""
     return hashlib.sha256(pickle.dumps(obj)).hexdigest()
 
-def save_model_pickle(model, filename):
-    model_file_path = f'{MODELS_PATH}/{filename}.json'
+def save_model_pickle(model, filename:str) -> None:
+    """
+    To save model to a file run this in notebook cell:
+    save_model_pickle(model=your_model_variable, filename='your_file_name_no_extension')
+    # Example:
+    save_model_pickle(model=final_linear_regression_model, filename='final_linear_regression_model')
+    """
+
+    model_file_path = f'{MODELS_PATH}/{filename}.pkl'
 
     # Ensure model directory exists
     os.makedirs(MODELS_PATH, exist_ok=True)

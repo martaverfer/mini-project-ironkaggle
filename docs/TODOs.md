@@ -57,6 +57,7 @@ These tasks have the scope of the entire project.
 ## file_handler
 - [ ] Save models to pickles
 - [ ] Check size and gitignore if exceeding limit for GitHub repo
+- [ ] Move reading model files to file_handler from `viz.ipynb`
 
 ## plots
 - [ ] Add code to plot class to automatically save all plots as image files:
