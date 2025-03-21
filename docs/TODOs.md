@@ -13,6 +13,10 @@ These tasks have the scope of the entire project.
 
 - [ ] Make filepaths adjustable for Win and Mac users.
 
+## Random forest regressor
+- [ ] see the shap feature importance to compare for RFR
+
+
 ## For linear regression
 
 - [ ] Add code to plot class to automatically save all plots as image files:
