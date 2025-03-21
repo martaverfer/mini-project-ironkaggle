@@ -14,6 +14,9 @@ These tasks have the scope of the entire project.
 - [ ] Make filepaths adjustable for Win and Mac users.
 - [ ] Reduse excessive library imports.
 - [ ] Fix overwritting exiting files.
+- [ ] Logger: either use it everywhere or not use it at all.
+
+# For notebooks
 
 ## Feature engineering
 - [ ] See the shap feature importance in `feature_engineering.ipynb` to compare with `random_forest_reg.ipynb`
@@ -22,18 +25,18 @@ These tasks have the scope of the entire project.
 
 ## Random forest regressor
 - [ ] Optimize performance.
+- [ ] Reduce code duplication.
+
+## Desicison tree
+- [ ] Reduce code duplication.
+- [ ] Add markdown headers to highlight iterations of model improvements.
 
 ## Ridge regression
 - [ ] Optimize performance.
 
 ## For linear regression
 
-- [ ] Add code to plot class to automatically save all plots as image files:
-```python
-plt.savefig("your_name.png", dpi=300, transparent=True)
-```
-
-- [ ] Move model test to a python script
+- [x] Move model test to a python script
 
 - [ ] Add more parameters for  hyperparameter test
   - [ ] fit_intercept: bool = True,
@@ -98,5 +101,67 @@ def model_validation(results_df, final_model):
 
 ```
 
+# For python modules
+
+## Common functions
+- [ ] Save models to pickles
+
+## generic for libs
+- [ ] All methids in a long module should be placed alphabetically to find them quickly
+- [ ] All functions and clas methods should have doc strings describing parameters and output
+
+## plots
+- [ ] Add code to plot class to automatically save all plots as image files:
+```python
+plt.savefig("your_name.png", dpi=300, transparent=True)
+```
+- [ ] Add Gryffindor color scale, use approach from `ridge_reg.ipynb`.
 
 
+
+# Refactoring notes
+
+## methods to notebooks mapping
+
+module | method | notebook | remarks
+--- | --- | --- | ---
+decision_tree.py | corr_heatmap | decision_tree.ipynb | TBD
+decision_tree.py | create_train_test_splits_and_evaluate | decision_tree.ipynb | TBD
+decision_tree.py | cross_validate_model | random_forest_reg.ipynb | TBD
+decision_tree.py | cross_validate_model | decision_tree.ipynb | TBD
+decision_tree.py | cross_validate_model_log | decision_tree.ipynb | TBD
+decision_tree.py | evaluate_different_correlations | decision_tree.ipynb | TBD
+decision_tree.py | feature_score | random_forest_reg.ipynb | TBD
+decision_tree.py | feature_score | decision_tree.ipynb | TBD
+decision_tree.py | feature_selection | random_forest_reg.ipynb | TBD
+decision_tree.py | feature_selection | decision_tree.ipynb | TBD
+decision_tree.py | feature_selection_log | decision_tree.ipynb | TBD
+decision_tree.py | model_validation | decision_tree.ipynb | TBD
+decision_tree.py | model_validation | random_forest_reg.ipynb | TBD
+decision_tree.py | perform_grid_search | decision_tree.ipynb | TBD
+decision_tree.py | perform_grid_search_log | decision_tree.ipynb | TBD
+decision_tree.py | select_training_set | decision_tree.ipynb | TBD
+decision_tree.py | select_training_set | random_forest_reg.ipynb | TBD
+decision_tree.py | select_training_set_log | decision_tree.ipynb | TBD
+decision_tree.py | selecting_features | random_forest_reg.ipynb | TBD
+decision_tree.py | selecting_features | decision_tree.ipynb | TBD
+decision_tree.py | selecting_features_log | decision_tree.ipynb | TBD
+decision_tree.py | train_decision_tree | decision_tree.ipynb | TBD
+decision_tree.py | train_decision_tree_log | decision_tree.ipynb | TBD
+decision_tree.py | tunning_cross_validate_model | decision_tree.ipynb | TBD
+lasso_model.py | regression_metrics | xgboost_reg.ipynb | TBD
+lasso_model.py | regression_metrics | lasso_reg.ipynb | TBD
+lasso_model.py | regression_validation | xgboost_reg.ipynb | TBD
+lasso_model.py | regression_validation | lasso_reg.ipynb | TBD
+lasso_model.py | reporting_dataframe | xgboost_reg.ipynb | TBD
+lasso_model.py | reporting_dataframe | lasso_reg.ipynb | TBD
+lasso_model.py | test_train_r_analysis | xgboost_reg.ipynb | TBD
+lasso_model.py | test_train_r_analysis | lasso_reg.ipynb | TBD
+random_forest.py | create_train_test_splits_and_evaluate | random_forest_reg.ipynb | TBD
+random_forest.py | cross_validate_model | random_forest_reg.ipynb | TBD
+random_forest.py | evaluate_different_correlations | random_forest_reg.ipynb | TBD
+random_forest.py | evaluate_different_estimators | random_forest_reg.ipynb | TBD
+random_forest.py | perform_grid_search | random_forest_reg.ipynb | TBD
+random_forest.py | train_random_forest | random_forest_reg.ipynb | TBD
+
+  
