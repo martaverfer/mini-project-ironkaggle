@@ -45,61 +45,7 @@ These tasks have the scope of the entire project.
   - [ ] positive: bool = False
 
 - [ ] Finalize visualisation for features by grouping them by topic and add barplots or donut plots with frequency tables for categorical data.
-
-- [ ] Visualize results using Annie's method:
-
-```python 
-def model_validation(results_df, final_model):
-    """
-    The function `model_validation` generates various diagnostic plots and learning/validation curves
-    for evaluating a regression model's performance.
-    
-    Parameters:
-        - results_df: The `results_df` parameter is a DataFrame containing the following columns: 
-                    ["Actual Price", "Predicted Price", "Difference"]. 
-        - final_model: The trained machine learning model that you want to evaluate and validate. 
-    """
-
-    y_actual = results_df['Actual Price']  
-    y_pred = results_df['Predicted Price']
-    residuals = results_df['Difference']
-
-    # 1. Actual vs. Predicted Values
-    plt.figure(figsize=(8, 6))
-    sns.regplot(x='Actual Price', y='Predicted Price', data=results_df,
-                scatter_kws={"color": "blue", "alpha": 0.5},
-                line_kws={"color": "red", "linewidth": 3},
-                ci=100)
-    plt.ylim(bottom=0)
-    plt.title('Actual vs. Predicted Values')
-    plt.xlabel('Actual')
-    plt.ylabel('Predictions')
-    plt.show()
-
-    # 2. Residuals vs. Predicted Values
-    plt.figure(figsize=(8, 6))
-    sns.scatterplot(x=y_pred, y=residuals)
-    plt.axhline(y=0, color='r', linestyle='--')
-    plt.xlabel("Predicted Values")
-    plt.ylabel("Residuals")
-    plt.title("Residuals vs. Predicted Values")
-    plt.show()
-
-    # 3. Histogram of Residuals
-    plt.figure(figsize=(8, 6))
-    sns.histplot(residuals, bins=60, kde=True)
-    plt.xlabel("Residuals")
-    plt.ylabel("Frequency")
-    plt.title("Distribution of Residuals")
-    plt.show()
-
-    # 4. Q-Q Plot to check normality of residuals
-    plt.figure(figsize=(8, 6))
-    stats.probplot(residuals, dist="norm", plot=plt)
-    plt.title("Q-Q Plot of Residuals")
-    plt.show()
-
-```
+- [ ] Visualize results using Annie's method "model_validation":
 
 # For python modules
 
@@ -116,7 +62,6 @@ def model_validation(results_df, final_model):
 plt.savefig("your_name.png", dpi=300, transparent=True)
 ```
 - [ ] Add Gryffindor color scale, use approach from `ridge_reg.ipynb`.
-
 
 
 # Refactoring notes
@@ -136,8 +81,8 @@ decision_tree.py | feature_score | decision_tree.ipynb | TBD
 decision_tree.py | feature_selection | random_forest_reg.ipynb | TBD
 decision_tree.py | feature_selection | decision_tree.ipynb | TBD
 decision_tree.py | feature_selection_log | decision_tree.ipynb | TBD
-decision_tree.py | model_validation | decision_tree.ipynb | TBD
-decision_tree.py | model_validation | random_forest_reg.ipynb | TBD
+decision_tree.py | model_validation | decision_tree.ipynb | moved to common_viz
+decision_tree.py | model_validation | random_forest_reg.ipynb | moved to common_viz
 decision_tree.py | perform_grid_search | decision_tree.ipynb | TBD
 decision_tree.py | perform_grid_search_log | decision_tree.ipynb | TBD
 decision_tree.py | select_training_set | decision_tree.ipynb | TBD
