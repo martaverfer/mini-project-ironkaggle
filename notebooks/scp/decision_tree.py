@@ -658,7 +658,7 @@ def model_validation(results_df, final_model, X_train, X_test, y_train, y_test):
     plt.figure(figsize=(8, 6))
     sns.regplot(x='Actual Price', y='Predicted Price', data=results_df,
                 scatter_kws={"color": "#eeba30", "alpha": 0.5},
-                line_kws={"color": "#000000", "linewidth": 3},
+                line_kws={"color": "#ae0001", "linewidth": 3},
                 ci=100)
     plt.ylim(bottom=0)
     plt.title('Actual vs. Predicted Values', color='black', fontsize=14, fontweight='bold')
