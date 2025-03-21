@@ -1,21 +1,37 @@
-## Feedback from Isi:
-- Add formated output for error metrics with '$' sign
-- Feature importance remove from plot name and keep only the '... coefficients'
-- Isi accepts feature importance only for one model, which is... "???"
+## Template
+- [ ] Task not done
+- [x] Task completed
 
+## Feedback from Isi:
+- [ ] Add formated output for error metrics with '$' sign
+- [ ] Feature importance remove from plot name and keep only the '... coefficients'
+- [ ] Isi accepts feature importance only for one model, which is... "???"
+
+## Generic tasks
+
+These tasks have the scope of the entire project.
+
+- [ ] Make filepaths adjustable for Win and Mac users.
 
 ## For linear regression
-- Add code to plot class to automatically save all plots as image files:
+
+- [ ] Add code to plot class to automatically save all plots as image files:
 ```python
 plt.savefig("your_name.png", dpi=300, transparent=True)
 ```
-- Move model test to a python script
-- Add more parameters for  hyperparameter test
-  - fit_intercept: bool = True,
-  - copy_X: bool = True,
-  - n_jobs: Int | None = None,
-  - positive: bool = False
-- Visualize results using Annie's method:
+
+- [ ] Move model test to a python script
+
+- [ ] Add more parameters for  hyperparameter test
+  - [ ] fit_intercept: bool = True,
+  - [ ] copy_X: bool = True,
+  - [ ] n_jobs: Int | None = None,
+  - [ ] positive: bool = False
+
+- [ ] Finalize visualisation for features by grouping them by topic and add barplots or donut plots with frequency tables for categorical data.
+
+- [ ] Visualize results using Annie's method:
+
 ```python 
 def model_validation(results_df, final_model):
     """
@@ -68,5 +84,6 @@ def model_validation(results_df, final_model):
     plt.show()
 
 ```
-- Finalize visualisation for features by grouping them by topic and add barplots or donut plots with frequency tables for categorical data.
+
+
 

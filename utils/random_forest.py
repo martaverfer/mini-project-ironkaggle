@@ -17,7 +17,7 @@ import seaborn as sns
 from matplotlib import font_manager
 from matplotlib.ticker import FuncFormatter
 
-import scp.decision_tree as dt
+import utils.decision_tree as dt
 
 # ==============================
 # Plot Styling & Customization
@@ -40,7 +40,7 @@ mpl.rcParams.update({
 # ==============================
 
 # Path to the custom font file
-FONT_PATH = './scp/fonts/Montserrat-Regular.ttf'
+FONT_PATH = '../utils/fonts/Montserrat-Regular.ttf'
 
 # Add the font to matplotlib's font manager
 font_manager.fontManager.addfont(FONT_PATH)
