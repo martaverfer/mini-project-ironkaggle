@@ -55,3 +55,4 @@ In real estate analysis, accurate price predictions are essential for decision-m
 
 - [Presentation](./presentations/Presented_by_Gryffindor.pdf)
 - [Developer setup](./docs/setup.md)
+- [Developer leftover tasks](./docs/TODOs.md)

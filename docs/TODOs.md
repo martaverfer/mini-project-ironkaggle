@@ -45,7 +45,8 @@ These tasks have the scope of the entire project.
   - [ ] n_jobs: Int | None = None,
   - [ ] positive: bool = False
 
-- [ ] Finalize visualisation for features by grouping them by topic and add barplots or donut plots with frequency tables for categorical data.
+- [x] Finalize visualisation for features by grouping them by topic (insteqad of hardcoded workaround for demo)
+- [ ] add barplots or donut plots with frequency tables for categorical data.
 - [ ] Visualize results using Annie's method "model_validation":
 
 # For python modules
