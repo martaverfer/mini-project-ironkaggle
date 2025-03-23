@@ -9,6 +9,7 @@ from enum import Enum
 # Global config (default values, can be overridden)
 TARGET_COLUMN = None
 COLORS = None
+MAX_COLUMNS = 4
 
 class PlotType(Enum):
     HISTOGRAM = "histogram"
@@ -36,21 +37,22 @@ def manage_logging(level=logging.INFO):
         return wrapper
     return decorator
 
-def plot_config(target_column, max_columns):
+def plot_config(target_column, max_colors, max_columns=4):
     """Set global config for plotting."""
 
-    global TARGET_COLUMN, COLORS
+    global TARGET_COLUMN, COLORS, MAX_COLUMNS
 
     TARGET_COLUMN = target_column
-    COLORS = sns.color_palette("viridis", max_columns)
+    COLORS = sns.color_palette("viridis", max_colors)
+    MAX_COLUMNS = max_columns
 
     sns.set_theme(style="darkgrid")
 
 @manage_logging(logging.INFO)  # Apply decorator to reset logging level
-def plots_for_numeric_columns(df: pd.DataFrame, columns: list, plot_type: PlotType):
+def plots_for_numeric_columns(df: pd.DataFrame, columns: list, plot_type: PlotType, plot_title: str):
     """Generate different types of plots for the given columns."""
-    max_cols_per_row = 4  # Maximum number of plots per row
-    ncols = min(max_cols_per_row, len(columns))  # Set columns, but not more than 4
+
+    ncols = min(MAX_COLUMNS, len(columns))  # Set columns, but not more than MAX_COLUMNS
     nrows = math.ceil(len(columns) / ncols)  # Calculate the required number of rows
     
     # Adjust figure size based on the number of rows
@@ -77,6 +79,9 @@ def plots_for_numeric_columns(df: pd.DataFrame, columns: list, plot_type: PlotTy
     # Hide any unused axes
     for j in range(i + 1, len(axes)):
         fig.delaxes(axes[j])  
+   
+    # Add a big header for the whole figure
+    fig.suptitle(plot_title, fontsize=14, fontweight='bold')
 
     plt.tight_layout()
     plt.show()
